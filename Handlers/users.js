@@ -17,7 +17,7 @@ const createUser = async (req, res) => {
       password,
     });
     await newUser.save();
-    res.status(201).send({ user: newUser });
+    res.status(201).send({message:"user created successfully", user: newUser });
   } catch (error) {
     res.status(500).send({
       message: error.message,
@@ -36,7 +36,7 @@ const loginUser = async (req, res) => {
       return res.status(400).send({ message: "Please Enter correct password" });
     }
     const token = jwt.sign({ _id: user._id }, secret);
-    res.status(200).send({ token });
+    res.status(200).send({message:"user logged in", token });
   } catch (error) {
     res.status(500).send({
       message: error.message,
@@ -55,7 +55,7 @@ const addUserBook = async (req, res) => {
     }
     user.books.push(bookId);
     await user.save();
-    res.status(201).send({ user });
+    res.status(201).send({message: "Book already exists", user });
   } catch (error) {
     res.status(500).send({
       message: error.message,
@@ -89,7 +89,7 @@ const deleteUserBook = async (req, res) => {
     }
     user.books.pull(bookId);
     await user.save();
-    res.status(201).send({ user });
+    res.status(201).send({message: "Book deleted", user });
   } catch (error) {
     res.status(500).send({
       message: error.message,
