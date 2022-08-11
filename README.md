@@ -6,6 +6,11 @@ baseURL : https://book-tardiverse.herokuapp.com/
 <h1>Routes</h1>
 <h2><li>Book Store Routes</li></h2>
 <ol>
+<li>See all books : /baseURL/</li>
+User can see all the books present in the catalogue.
+
+<br>
+<br>
 <li>Add book to catalogue : /baseURL/addBook</li>
 User can add a book in the catalogue by sending title and description of the book.
 
@@ -48,3 +53,9 @@ User can delete a book from the user catalogue by sending book id as path parame
 User can get all the books of other user by sending name of the user as query parameter.
 
 </ol>
+
+##Demo Video
+
+
+https://user-images.githubusercontent.com/102805884/184098132-7d7148fb-1d1b-43ce-b194-af9853acae20.mp4
+
