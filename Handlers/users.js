@@ -55,7 +55,7 @@ const addUserBook = async (req, res) => {
     }
     user.books.push(bookId);
     await user.save();
-    res.status(201).send({message: "Book already exists", user });
+    res.status(201).send({message: "Book added to your catalogue", user });
   } catch (error) {
     res.status(500).send({
       message: error.message,
